@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+
+Date=`date +'%Y%m%d'`
+
+
+
+for i in $(ls) 
+do mv $i $i.$Date
+done
