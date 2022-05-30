@@ -1,0 +1,75 @@
+#!/bin/bash
+
+
+# generating random numbers
+output=$(
+
+for i in {1..5}
+do 
+       shuf -i 1-50 -n1
+       if [ $i -eq 5 ]
+       then
+       shuf -i 1-10 -n1
+       fi
+done 
+
+)
+
+
+#redirecting the output to a separate file
+
+
+echo $output >> Activity3_Output.$(date +'%Y%m%d')
+
+# Asking for user input
+
+echo "please entre 5  numbers between 1 and 50"
+
+x=1
+while [ $x -le 6 ] 
+  do 
+	        ((x++))
+		read input
+          
+        
+	if [ "$x" -le 6 ] && [ "$input" -gt 0 ] && [ "$input" -le 51 ]
+	
+	then 
+		Input_Array+=($input)
+		if [ $x -le 5 ]
+		then      	
+	       	echo " Enter another # "
+                	
+        fi    
+
+	else
+
+		((x--))
+		echo "Enter a valid #"
+	
+	 
+
+
+
+	
+	else
+	if (( $x == 6 )) 
+	 
+	then
+		echo " entre a number between 1-10 "
+		read input
+		if  [ "$input" -gt 0 ] && [ "$input" -le 11 ]
+		then
+		Input_Array+=($input)
+
+        fi
+	fi
+	fi
+
+echo ${Input_Array[@]}
+done 	
+
+
+
+
+
